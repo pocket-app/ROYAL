@@ -41,8 +41,8 @@ function registerGCM() {
 			////////////database store registration //////////
 			$("#GCM_ID").html('GCM ID...'+data.registrationId);
 			var student_reg_no = $.session.get('session_id');
-			var dataString="regID="+data.registrationId+"&student_reg_no="+student_reg_no;
-			var BaseURL = "http://swsinc.in/beta/aryanintra/phonegap/";
+			var dataString="regID="+data.registrationId+"&student_reg_no="+student_reg_no; alert(dataString);
+			var BaseURL = "http://royalintra.com/phonegp/";
 			$.ajax({
                     type: "POST",
                     url: BaseURL+"student_insert_gcm_reg_id.php?",
