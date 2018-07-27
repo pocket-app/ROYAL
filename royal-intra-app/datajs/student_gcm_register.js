@@ -74,11 +74,13 @@ var app = {
 			
 			////////////database store registration //////////
 			$("#GCM_ID").val(data.registrationId);
-			/*var dataString="regID="+data.registrationId;
-			var BaseURL = "https://freshboxoffice.com/phonegap/";
+			//$("#GCM_ID").html('GCM ID...'+data.registrationId);
+			var student_reg_no = $.session.get('session_id');
+			var dataString="regID="+data.registrationId+"&student_reg_no="+student_reg_no;
+			var BaseURL = "http://royalintra.com/phonegp/";
 			$.ajax({
                     type: "POST",
-                    url: BaseURL+"insert_gcm_reg_id.php?",
+                    url: BaseURL+"student_insert_gcm_reg_id.php?",
                     //url:"http://localhost/phonegap/database/insert.php",
                     data: dataString,
                     crossDomain: true,
@@ -86,13 +88,13 @@ var app = {
                     beforeSend: function(){ $("#GCM_ID").html('Connecting...'+data.registrationId); },
                     success: function(dataINS){
                         if(dataINS=="ok")
-                        {}
+                        { alert("Your mobile is registered, thank you."); }
                         else if(dataINS=="error")
                         {} 
 						 else if(dataINS=="duplicate")
                         {}
                     }
-                });*/
+                });
 			
 			///////////////////database input registration ////////
         });
