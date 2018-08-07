@@ -5,7 +5,18 @@ function submit_data() {
             var uni_reg_no=$("#uni_reg_no").val();
 			var email=$("#email").val();
             var password=$("#password").val();
+			var conf_password=$("#conf_password").val();
 			var GCM_ID = $("#GCM_ID").val();
+			
+			if($.trim(password).length < 8) {
+				alert("Password must be 8 characters long.");
+				return false;
+			}
+			
+			if(conf_password != password) {
+				alert("Password and Confirm Password must be same.");
+				return false;
+			}
 			
 					
             var dataString="uni_reg_no="+uni_reg_no+"&password="+password+"&email="+email+"&gcm_id="+GCM_ID+"&mode=register";
